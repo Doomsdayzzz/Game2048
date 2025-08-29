@@ -1,0 +1,144 @@
+﻿<Window x:Class="Game2048.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game2048.UI"
+        mc:Ignorable="d"
+        Title="2048" Height="630" Width="550"
+        Background="#f8f6e9" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize"
+        KeyDown="MainWindow_OnKeyDown">
+    <Window.Resources>
+    <ResourceDictionary Source="Styles.xaml"/>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Grid Name="Infobar" ShowGridLines="False" Width="490" Height="80">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleBorderInfobar}">
+             <TextBlock Style="{StaticResource ResourceKey=StyleTextBlockBar}">
+                 <Run>Score</Run>
+                 <LineBreak/>
+                 <Run>10</Run>
+             </TextBlock>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleBorderInfobar}">
+            <TextBlock Style="{StaticResource ResourceKey=StyleTextBlockBar}">
+                <Run Text="High Score"/>
+                <LineBreak/>
+                <Run Text="201"/>
+            </TextBlock>
+            </Border>
+        </Grid>
+        
+        <Border Background="#bbada0" CornerRadius="10" Width="480" Height="490" BorderThickness="2">
+            
+        <Grid Name="PlayingField" ShowGridLines="False" Background="#bbada0" Width="460">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+            <!-- первый ряд -->
+            <Button Grid.Row="0" Grid.Column="0"  Name="Button1_1" Content="2" Style="{StaticResource Btn2}"/>
+            <Button Grid.Row="0" Grid.Column="1"  Name="Button1_2" Content="4" Style="{StaticResource Btn4}"/>
+            <Button Grid.Row="0" Grid.Column="2"  Name="Button1_3" Content="8" Style="{StaticResource Btn8}"/>
+            <Button Grid.Row="0" Grid.Column="3"  Name="Button1_4" Content="16" Style="{StaticResource Btn16}"/>
+            <!-- второй ряд -->
+            <Button Grid.Row="1" Grid.Column="0"  Name="Button2_1" Content="32" Style="{StaticResource Btn32}"/>
+            <Button Grid.Row="1" Grid.Column="1"  Name="Button2_2" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="1" Grid.Column="2"  Name="Button2_3" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="1" Grid.Column="3"  Name="Button2_4" Content="" Style="{StaticResource BtnDefault}"/>
+            <!-- третий ряд -->     
+            <Button Grid.Row="2" Grid.Column="0"  Name="Button3_1" Content="2" Style="{StaticResource Btn2}"/>
+            <Button Grid.Row="2" Grid.Column="1"  Name="Button3_2" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="2" Grid.Column="2"  Name="Button3_3" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="2" Grid.Column="3"  Name="Button3_4" Content="" Style="{StaticResource BtnDefault}"/>
+            <!-- четвертый ряд -->
+            <Button Grid.Row="3" Grid.Column="0"  Name="Button4_1" Content="2" Style="{StaticResource Btn2}"/>
+            <Button Grid.Row="3" Grid.Column="1"  Name="Button4_2" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="3" Grid.Column="2"  Name="Button4_3" Content="" Style="{StaticResource BtnDefault}"/>
+            <Button Grid.Row="3" Grid.Column="3"  Name="Button4_4" Content="" Style="{StaticResource BtnDefault}"/>
+
+            <!-- <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="2" Style="{StaticResource ResourceKey=StyleTextBlock_2}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            
+            <!-- <TextBlock Grid.Row="0" Grid.Column="0"  Text="2" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- <TextBlock Grid.Row="0" Grid.Column="1"  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- <TextBlock Grid.Row="0" Grid.Column="2"  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- <TextBlock Grid.Row="0" Grid.Column="3"  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            
+            <!-- второй ряд -->
+            <!-- <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="16" Style="{StaticResource ResourceKey=StyleTextBlock_16}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            
+            <!-- третий ряд -->
+            <!-- <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            
+            <!-- четвертый ряд -->
+            <!-- <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="8" Style="{StaticResource ResourceKey=StyleTextBlock_8}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+            <!-- <Border Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleBorderPlayingField}"> -->
+            <!--     <TextBlock  Text="" Style="{StaticResource ResourceKey=StyleTextBlock}"/> -->
+            <!-- </Border> -->
+
+            
+                
+           
+        </Grid>
+        </Border>
+    </StackPanel>
+</Window>

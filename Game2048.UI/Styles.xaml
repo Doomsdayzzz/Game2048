@@ -1,0 +1,85 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="StyleTextBlockBar" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="10"/>
+     </Style>
+    <Style x:Key="StyleBorderInfobar" TargetType="Border">
+        <Setter Property="Height" Value="60"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Background" Value="#cdc1b5"/>
+        <Setter Property="CornerRadius" Value="10"/>
+    </Style>
+    <Style x:Key="BtnDefault" TargetType="Button">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Background" Value="#cdc1b5"/>
+        <!-- <Setter Property="Foreground" Value="#7f776c"/> -->
+        <Setter>
+            <Setter.Property>
+                Foreground
+            </Setter.Property>
+            <Setter.Value>
+                #7f776c
+            </Setter.Value>
+        </Setter>
+        <!-- переопределение стиля кнопки для реализации закругления бордера -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TypeName=Button}">
+                    <Border x:Name="buttonBorder" BorderThickness="0" 
+                            CornerRadius="10"
+                            BorderBrush="#cdc1b5"
+                            Background="{TemplateBinding Property=Background}">
+                        <ContentControl Content="{TemplateBinding Property=Content}"
+                                        Foreground="{TemplateBinding Property=Foreground}"
+                                        HorizontalAlignment="{TemplateBinding Property=HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding Property=VerticalContentAlignment}"/> 
+                    </Border>
+                </ControlTemplate>
+                
+            </Setter.Value>
+                                
+        </Setter>
+    </Style>
+    <Style x:Key="Btn2" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#eee4da"/>
+    </Style>
+    <Style x:Key="Btn4" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#ece0ca"/>
+    </Style>
+    <Style x:Key="Btn8" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#e3cbca"/>
+    </Style>
+    <Style x:Key="Btn16" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#e3cb70"/>
+    </Style>
+    <Style x:Key="Btn32" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#f2b3ba"/>
+    </Style>
+    <Style x:Key="Btn64" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#b8b3f6"/>
+    </Style>
+    <Style x:Key="Btn128" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#5ff4f0"/>
+    </Style>
+    <Style x:Key="Btn256" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#5ff4b6"/>
+    </Style>
+    <Style x:Key="Btn512" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#ffa2c9"/>
+    </Style>
+    <Style x:Key="Btn1024" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#00beff"/>
+    </Style>
+    <Style x:Key="Btn2048" BasedOn="{StaticResource BtnDefault}" TargetType="Button">
+        <Setter Property="Background" Value="#00be99"/>
+    </Style>
+    
+</ResourceDictionary>
