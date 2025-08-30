@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AMuDe\\RiderProjects\\Game2048_\\Game2048.UI\\Game2048.UI.csproj",
+      "projectUniqueName": "C:\\Users\\AMuDe\\RiderProjects\\Game2048\\Game2048.UI\\Game2048.UI.csproj",
       "projectName": "Game2048.UI",
-      "projectPath": "C:\\Users\\AMuDe\\RiderProjects\\Game2048_\\Game2048.UI\\Game2048.UI.csproj",
+      "projectPath": "C:\\Users\\AMuDe\\RiderProjects\\Game2048\\Game2048.UI\\Game2048.UI.csproj",
       "packagesPath": "C:\\Users\\AMuDe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AMuDe\\RiderProjects\\Game2048_\\Game2048.UI\\obj\\",
+      "outputPath": "C:\\Users\\AMuDe\\RiderProjects\\Game2048\\Game2048.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

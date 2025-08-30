@@ -20,15 +20,8 @@
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="100"/>
         <Setter Property="Background" Value="#cdc1b5"/>
-        <!-- <Setter Property="Foreground" Value="#7f776c"/> -->
-        <Setter>
-            <Setter.Property>
-                Foreground
-            </Setter.Property>
-            <Setter.Value>
-                #7f776c
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Foreground" Value="#7f776c"/>
+       
         <!-- переопределение стиля кнопки для реализации закругления бордера -->
         <Setter Property="Template">
             <Setter.Value>

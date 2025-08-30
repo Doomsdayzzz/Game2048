@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Game2048.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa459745cc6734133e74fcdf2af5b4d33f89441f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Game2048.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Game2048.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
